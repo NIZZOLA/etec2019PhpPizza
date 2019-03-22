@@ -39,16 +39,15 @@ $pizzaValor[5] = 24.99;
 
 /*
 
-
-/// exemplo de um loop para percorrer o array
 for( $i=0; $i < count($pizzaCodigo); $i++)
 {
 	echo "<br>".$pizzaTitulo[$i];
 }
 
 
-/*
-// esqueleto para criar novas pizzas, copie e coloque o próximo número do índice
+
+
+
 $pizzaCodigo[] = "";
 $pizzaTitulo[] = "";
 $pizzaImagem[] = "";
