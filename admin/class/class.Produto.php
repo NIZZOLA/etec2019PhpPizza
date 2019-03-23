@@ -60,6 +60,40 @@ class ProdutoProduto
 	{
 		return $this->tipo;
 	}
+
+	public function Incluir()
+	{
+		$sqlcmd = "INSERT INTO produto ( Descricao, Valor, Imagem, Titulo, TipoId) 
+		VALUES ( '$this->getDescri()', $this->getValor(), '$this->getImagem()',
+		'$this->getTitulo()', $this->getTipo() )";
+
+		if( $this->query($sqlcmd))
+			return true;
+		else
+			return false;
+	}
+
+	public function Alterar()
+	{
+	}
+
+	public function Excluir($codigo )
+	{
+		$sqlcmd = "delete from produto where produtoid=".$codigo;
+		return $this->query($sqlcmd);
+	}
+
+	public function GetAll()
+	{
+	}
+
+	public function GetOne($codigo )
+	{
+	}
+
+
+
+
 }
 
 

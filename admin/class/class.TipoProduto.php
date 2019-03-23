@@ -24,7 +24,7 @@ class TipoProduto extends PDO
 	   return $this->titulo;
    }
    
-   public function validaDados()
+   public function ValidaDados()
    {
 	   $resposta = true;
 	   
@@ -36,14 +36,22 @@ class TipoProduto extends PDO
 	
    public function Incluir()
    {
-	   $sqlcmd = "insert into tipoproduto (codigo, tipo ) values 
-	        ( ".$this->getCodigo().", '".$this->getTitulo()."')";
-	   
-	   if( $base = $this->query($sqlcmd) )
+	   $sqlcmd = "insert into tipoproduto ( Descricao ) values 
+	        ( '".$this->getTitulo()."')";
+	   // echo $sqlcmd;
+	   if( $this->query($sqlcmd) )
 	   {
-		   while($row = $base->fetch())
-			   return $row["codigo"];
+         return 1;
 	   }
+	   else
+		  return 0;
+   }
+
+   public function Deletar($codigo)
+   {
+      $sqlcmd = "delete from tipoproduto where tipoid=".$codigo;
+      if( $this->query($sqlcmd) )
+	      return 1;
 	   else
 		  return 0;
    }
@@ -74,7 +82,5 @@ class TipoProduto extends PDO
 	   return $this->query( $sql );
    }
 }
-
-
 
 ?>
