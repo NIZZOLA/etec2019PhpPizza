@@ -1,16 +1,16 @@
 <?php
   include "class\config.php";
   include "class\class.TipoProduto.php";
-  include "class\class.Produto.php";
-
    
-   $tipo = new TipoProduto(DB_STRING, DB_USER, DB_PASS);
-   $tipo->setCodigo( $_POST["codigo"] );
-   $tipo->setTitulo( $_POST["descri"] );
+  $tipo = new TipoProduto(DB_STRING, DB_USER, DB_PASS);
+  $tipo->setCodigo( $_POST["codigo"] );
+  $tipo->setTitulo( $_POST["descri"] );
 
-   if( $tipo->validaDados())
+   if( $tipo->ValidaDados())
    {
-	   $codigo = $tipo->incluir();
+     $codigo = $tipo->Incluir();
+     $teste = $tipo->Deletar();
+     
 	   if( $codigo > 0 )
 	   {
 		   echo "produto incluido com o código ".$codigo;
