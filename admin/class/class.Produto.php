@@ -1,6 +1,6 @@
 <?php
 
-class ProdutoProduto 
+class Produto extends PDO
 {
    private $codigo,$titulo,$imagem,$descri,$valor,$tipo;
 	
@@ -91,8 +91,10 @@ class ProdutoProduto
 	{
 	}
 
-
-
+	public function ValidaDados()
+	{
+		return true;
+	}
 
 }
 
